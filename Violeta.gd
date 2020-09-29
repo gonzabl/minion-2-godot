@@ -23,3 +23,13 @@ func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity,FLOOR_NORMAL)
 	
+func dead():
+	queue_free()
+
+func aplicar_telequinesis(pos):
+	if Input.is_action_just_pressed("realease"):
+		var dir = pos - position
+		pass
+
+func _on_Area2D_body_entered(body):
+	queue_free()

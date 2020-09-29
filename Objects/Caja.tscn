@@ -7,11 +7,13 @@
 extents = Vector2( 28.1483, 28.2591 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 55.7428, 10 )
+extents = Vector2( 92.6878, 10 )
 
 [node name="Caja" type="RigidBody2D"]
-mode = 2
-gravity_scale = 10.0
+input_pickable = true
+collision_layer = 4
+gravity_scale = 22.11
+can_sleep = false
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -25,7 +27,8 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
 shape = SubResource( 2 )
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
